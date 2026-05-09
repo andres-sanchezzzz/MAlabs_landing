@@ -1,0 +1,101 @@
+<section id="contacto" class="py-18 md:py-24">
+  <div class="section-shell">
+    <div class="grid gap-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(320px,0.85fr)]">
+      <div class="reveal" data-reveal>
+        <div class="eyebrow">Contacto</div>
+        <h2 class="section-title mt-5">Cuéntanos qué quieres construir.</h2>
+        <p class="section-copy mt-5 max-w-2xl">
+          Si estás lanzando una idea, modernizando una operación o buscando una solución digital más clara, podemos ayudarte a definir el siguiente paso y ejecutarlo con criterio técnico.
+        </p>
+
+        <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+          <a
+            href="#formulario-contacto"
+            class="button-primary"
+          >
+            WhatsApp
+          </a>
+          <a
+            href="mailto:contacto@malabsgroup.com?subject=Consulta%20desde%20malabsgroup.com"
+            class="button-secondary"
+          >
+            Email
+          </a>
+        </div>
+
+        <div class="section-card mt-8 rounded-[1.75rem] p-6">
+          <p class="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-200">Canales</p>
+          <div class="mt-5 space-y-4 text-sm leading-7 text-slate-400">
+            <p>
+              El botón de WhatsApp está preparado como CTA visual. Solo necesitas reemplazar su enlace por tu número oficial cuando esté definido.
+            </p>
+            <p>
+              El correo actual utiliza <a href="mailto:contacto@malabsgroup.com" class="text-slate-100 underline decoration-cyan-400/60 underline-offset-4">contacto@malabsgroup.com</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gradient-border reveal stagger-1" data-reveal>
+        <div class="section-card rounded-[2rem] p-6 md:p-8">
+          <div class="flex items-center justify-between gap-4">
+            <div>
+              <h3 class="text-2xl font-semibold text-white">Formulario de contacto</h3>
+              <p class="mt-2 text-sm leading-7 text-slate-400">Interfaz lista para conectar a tu proveedor cuando lo definas.</p>
+            </div>
+            <span class="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-200">
+              Estático
+            </span>
+          </div>
+
+          <!-- TODO: Connect this form to Formspree, Resend plus a serverless endpoint, or Cloudflare Workers when the submission provider is chosen. -->
+          <!-- TODO: Add success and error states after wiring real submission handling. -->
+          <form id="formulario-contacto" class="mt-8 space-y-4" aria-label="Formulario de contacto" data-static-form>
+            <div class="grid gap-4 sm:grid-cols-2">
+              <label class="block">
+                <span class="mb-2 block text-sm font-medium text-slate-200">Nombre</span>
+                <input class="field" type="text" name="name" placeholder="Tu nombre" required />
+              </label>
+              <label class="block">
+                <span class="mb-2 block text-sm font-medium text-slate-200">Empresa</span>
+                <input class="field" type="text" name="company" placeholder="Tu empresa" />
+              </label>
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-2">
+              <label class="block">
+                <span class="mb-2 block text-sm font-medium text-slate-200">Email</span>
+                <input class="field" type="email" name="email" placeholder="tu@empresa.com" required />
+              </label>
+              <label class="block">
+                <span class="mb-2 block text-sm font-medium text-slate-200">Tipo de proyecto</span>
+                <input class="field" type="text" name="project" placeholder="Landing, software, automatización, IA..." />
+              </label>
+            </div>
+
+            <label class="block">
+              <span class="mb-2 block text-sm font-medium text-slate-200">Mensaje</span>
+              <textarea class="field min-h-36 resize-y" name="message" placeholder="Cuéntanos el contexto, objetivo y alcance inicial." required></textarea>
+            </label>
+
+            <p class="text-sm leading-6 text-slate-500">
+              Este formulario está listo a nivel de interfaz. Cuando conectes un proveedor real, aquí podremos mostrar estados de envío, error y confirmación.
+            </p>
+
+            <button type="submit" class="button-primary w-full sm:w-auto">
+              Enviar consulta
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  document.querySelectorAll("[data-static-form]").forEach((form) => {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+    });
+  });
+</script>

@@ -1,0 +1,36 @@
+---
+const footerLinks = [
+  { href: "#inicio", label: "Inicio" },
+  { href: "#servicios", label: "Servicios" },
+  { href: "#proceso", label: "Proceso" },
+  { href: "#oferta", label: "Oferta" },
+  { href: "#contacto", label: "Contacto" }
+];
+---
+
+<footer class="pb-8 pt-6">
+  <div class="section-shell">
+    <div class="section-card rounded-[2rem] px-6 py-8 md:px-8">
+      <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+        <div class="max-w-xl">
+          <img src="/brand/malabs-logo-stacked.svg" alt="Malabs Group" class="h-10 w-auto" />
+          <p class="mt-5 text-sm leading-7 text-slate-400">
+            Malabs Group diseña y construye software, automatizaciones, soluciones de datos e inteligencia artificial para empresas que necesitan ejecutar con claridad.
+          </p>
+        </div>
+
+        <nav class="flex flex-wrap gap-4 text-sm text-slate-400 lg:justify-end" aria-label="Enlaces del pie de página">
+          {footerLinks.map((item) => (
+            <a href={item.href} class="hover:text-white">
+              {item.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+
+      <div class="mt-8 border-t border-slate-800/80 pt-5 text-sm text-slate-500">
+        © {new Date().getFullYear()} Malabs Group. Todos los derechos reservados.
+      </div>
+    </div>
+  </div>
+</footer>
