@@ -10,8 +10,10 @@
 
         <div class="mt-8 flex flex-col gap-4 sm:flex-row">
           <a
-            href="#formulario-contacto"
+            href="https://wa.me/?text=Hola%20MAlabs%2C%20quiero%20agendar%20una%20llamada."
             class="button-primary"
+            target="_blank"
+            rel="noreferrer"
           >
             WhatsApp
           </a>
@@ -24,26 +26,26 @@
         </div>
 
         <div class="section-card mt-8 rounded-[1.75rem] p-6">
-          <p class="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-200">Canales</p>
-          <div class="mt-5 space-y-4 text-sm leading-7 text-slate-400">
+          <p class="text-sm font-semibold uppercase tracking-[0.24em] text-sky-700">Canales</p>
+          <div class="mt-5 space-y-4 text-sm leading-7 text-slate-600">
             <p>
-              El botón de WhatsApp está preparado como CTA visual. Solo necesitas reemplazar su enlace por tu número oficial cuando esté definido.
+              El botón de WhatsApp ya funciona como CTA y puede apuntar al número oficial cuando quede definido.
             </p>
             <p>
-              El correo actual utiliza <a href="mailto:contacto@malabsgroup.com" class="text-slate-100 underline decoration-cyan-400/60 underline-offset-4">contacto@malabsgroup.com</a>.
+              El correo actual utiliza <a href="mailto:contacto@malabsgroup.com" class="text-slate-900 underline decoration-sky-400/60 underline-offset-4">contacto@malabsgroup.com</a>.
             </p>
           </div>
         </div>
       </div>
 
       <div class="gradient-border reveal stagger-1" data-reveal>
-        <div class="section-card rounded-[2rem] p-6 md:p-8">
+        <div class="section-card-strong rounded-[2rem] p-6 md:p-8">
           <div class="flex items-center justify-between gap-4">
             <div>
-              <h3 class="text-2xl font-semibold text-white">Formulario de contacto</h3>
-              <p class="mt-2 text-sm leading-7 text-slate-400">Interfaz lista para conectar a tu proveedor cuando lo definas.</p>
+              <h3 class="text-2xl font-semibold text-slate-950">Formulario de contacto</h3>
+              <p class="mt-2 text-sm leading-7 text-slate-600">Interfaz lista para conectar a tu proveedor cuando lo definas.</p>
             </div>
-            <span class="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-200">
+            <span class="rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-sky-700">
               Estático
             </span>
           </div>
@@ -53,28 +55,28 @@
           <form id="formulario-contacto" class="mt-8 space-y-4" aria-label="Formulario de contacto" data-static-form>
             <div class="grid gap-4 sm:grid-cols-2">
               <label class="block">
-                <span class="mb-2 block text-sm font-medium text-slate-200">Nombre</span>
+                <span class="mb-2 block text-sm font-medium text-slate-900">Nombre</span>
                 <input class="field" type="text" name="name" placeholder="Tu nombre" required />
               </label>
               <label class="block">
-                <span class="mb-2 block text-sm font-medium text-slate-200">Empresa</span>
+                <span class="mb-2 block text-sm font-medium text-slate-900">Empresa</span>
                 <input class="field" type="text" name="company" placeholder="Tu empresa" />
               </label>
             </div>
 
             <div class="grid gap-4 sm:grid-cols-2">
               <label class="block">
-                <span class="mb-2 block text-sm font-medium text-slate-200">Email</span>
+                <span class="mb-2 block text-sm font-medium text-slate-900">Email</span>
                 <input class="field" type="email" name="email" placeholder="tu@empresa.com" required />
               </label>
               <label class="block">
-                <span class="mb-2 block text-sm font-medium text-slate-200">Tipo de proyecto</span>
+                <span class="mb-2 block text-sm font-medium text-slate-900">Tipo de proyecto</span>
                 <input class="field" type="text" name="project" placeholder="Landing, software, automatización, IA..." />
               </label>
             </div>
 
             <label class="block">
-              <span class="mb-2 block text-sm font-medium text-slate-200">Mensaje</span>
+              <span class="mb-2 block text-sm font-medium text-slate-900">Mensaje</span>
               <textarea class="field min-h-36 resize-y" name="message" placeholder="Cuéntanos el contexto, objetivo y alcance inicial." required></textarea>
             </label>
 

@@ -3,17 +3,36 @@ interface Props {
   title: string;
   description: string;
   icon: string;
+  accent?: "blue" | "cyan" | "purple";
 }
 
-const { title, description, icon } = Astro.props;
+const { title, description, icon, accent = "blue" } = Astro.props;
+
+const accents = {
+  blue: {
+    chip: "border-sky-200 bg-sky-50 text-sky-700",
+    glow: "from-sky-500/18 to-transparent"
+  },
+  cyan: {
+    chip: "border-cyan-200 bg-cyan-50 text-cyan-700",
+    glow: "from-cyan-500/18 to-transparent"
+  },
+  purple: {
+    chip: "border-violet-200 bg-violet-50 text-violet-700",
+    glow: "from-violet-500/18 to-transparent"
+  }
+};
+
+const palette = accents[accent];
 ---
 
-<article class="section-card card-hover h-full rounded-[1.75rem] p-6">
-  <div class="flex h-12 w-12 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-200">
+<article class="section-card card-hover relative h-full overflow-hidden rounded-[1.75rem] p-6">
+  <div class={`absolute inset-x-0 top-0 h-px bg-gradient-to-r ${palette.glow}`}></div>
+  <div class={`flex h-12 w-12 items-center justify-center rounded-2xl border ${palette.chip}`}>
     <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <path d={icon}></path>
     </svg>
   </div>
-  <h3 class="mt-5 text-xl font-semibold text-white">{title}</h3>
-  <p class="mt-3 text-sm leading-7 text-slate-400">{description}</p>
+  <h3 class="mt-5 text-xl font-semibold text-slate-950">{title}</h3>
+  <p class="mt-3 text-sm leading-7 text-slate-600">{description}</p>
 </article>
