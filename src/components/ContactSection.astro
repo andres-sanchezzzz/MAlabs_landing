@@ -1,11 +1,15 @@
-<section id="contacto" class="py-18 md:py-24">
+<section id="contacto" class="pt-6 pb-18 md:pt-8 md:pb-24">
   <div class="section-shell">
-    <div class="grid gap-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(320px,0.85fr)]">
+    <div class="eyebrow">Contacto</div>
+    <div
+      class="grid gap-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(320px,0.85fr)] lg:items-center"
+    >
       <div class="reveal" data-reveal>
-        <div class="eyebrow">Contacto</div>
         <h2 class="section-title mt-5">Cuéntanos qué quieres construir.</h2>
         <p class="section-copy mt-5 max-w-2xl">
-          Si estás lanzando una idea, modernizando una operación o buscando una solución digital más clara, podemos ayudarte a definir el siguiente paso y ejecutarlo con criterio técnico.
+          Si estás lanzando una idea, modernizando una operación o buscando una
+          solución digital más clara, podemos ayudarte a definir el siguiente
+          paso y ejecutarlo con criterio técnico.
         </p>
 
         <div class="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -24,70 +28,116 @@
             Email
           </a>
         </div>
-
-        <div class="section-card mt-8 rounded-[1.75rem] p-6">
-          <p class="text-sm font-semibold uppercase tracking-[0.24em] text-sky-700">Canales</p>
-          <div class="mt-5 space-y-4 text-sm leading-7 text-slate-600">
-            <p>
-              El botón de WhatsApp ya funciona como CTA y puede apuntar al número oficial cuando quede definido.
-            </p>
-            <p>
-              El correo actual utiliza <a href="mailto:contacto@malabsgroup.com" class="text-slate-900 underline decoration-sky-400/60 underline-offset-4">contacto@malabsgroup.com</a>.
-            </p>
-          </div>
-        </div>
       </div>
 
       <div class="gradient-border reveal stagger-1" data-reveal>
-        <div class="section-card-strong rounded-[2rem] p-6 md:p-8">
-          <div class="flex items-center justify-between gap-4">
-            <div>
-              <h3 class="text-2xl font-semibold text-slate-950">Formulario de contacto</h3>
-              <p class="mt-2 text-sm leading-7 text-slate-600">Interfaz lista para conectar a tu proveedor cuando lo definas.</p>
-            </div>
-            <span class="rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-sky-700">
-              Estático
-            </span>
+        <div
+          class="panel-dark relative overflow-hidden rounded-[2rem] p-6 text-white md:p-8"
+        >
+          <div
+            class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(19,148,215,0.22),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(93,50,152,0.22),transparent_30%)]"
+          >
           </div>
 
-          <!-- TODO: Connect this form to Formspree, Resend plus a serverless endpoint, or Cloudflare Workers when the submission provider is chosen. -->
-          <!-- TODO: Add success and error states after wiring real submission handling. -->
-          <form id="formulario-contacto" class="mt-8 space-y-4" aria-label="Formulario de contacto" data-static-form>
-            <div class="grid gap-4 sm:grid-cols-2">
-              <label class="block">
-                <span class="mb-2 block text-sm font-medium text-slate-900">Nombre</span>
-                <input class="field" type="text" name="name" placeholder="Tu nombre" required />
-              </label>
-              <label class="block">
-                <span class="mb-2 block text-sm font-medium text-slate-900">Empresa</span>
-                <input class="field" type="text" name="company" placeholder="Tu empresa" />
-              </label>
+          <div class="relative">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <p
+                  class="text-sm font-semibold uppercase tracking-[0.22em] text-sky-100"
+                >
+                  Formulario
+                </p>
+                <h3 class="mt-3 text-2xl font-semibold text-white">
+                  Inicia tu proyecto
+                </h3>
+                <p class="mt-2 text-sm leading-6 text-slate-300">
+                  Cuéntanos qué necesitas y te contactaremos para entender el
+                  alcance, prioridades y próximos pasos.
+                </p>
+              </div>
             </div>
 
-            <div class="grid gap-4 sm:grid-cols-2">
+            <form
+              id="formulario-contacto"
+              class="mt-8 space-y-4"
+              aria-label="Formulario de contacto"
+              data-static-form
+            >
+              <div class="grid gap-4 sm:grid-cols-2">
+                <label class="block">
+                  <span class="mb-2 block text-sm font-medium text-slate-200"
+                    >Nombre</span
+                  >
+                  <input
+                    class="w-full rounded-2xl border border-white/14 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-slate-400 outline-none transition focus:border-sky-300/60 focus:bg-white/12 focus:ring-4 focus:ring-sky-400/10"
+                    type="text"
+                    name="name"
+                    placeholder="Tu nombre"
+                    required
+                  />
+                </label>
+
+                <label class="block">
+                  <span class="mb-2 block text-sm font-medium text-slate-200"
+                    >Empresa</span
+                  >
+                  <input
+                    class="w-full rounded-2xl border border-white/14 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-slate-400 outline-none transition focus:border-sky-300/60 focus:bg-white/12 focus:ring-4 focus:ring-sky-400/10"
+                    type="text"
+                    name="company"
+                    placeholder="Tu empresa"
+                  />
+                </label>
+              </div>
+
+              <div class="grid gap-4 sm:grid-cols-2">
+                <label class="block">
+                  <span class="mb-2 block text-sm font-medium text-slate-200"
+                    >Email</span
+                  >
+                  <input
+                    class="w-full rounded-2xl border border-white/14 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-slate-400 outline-none transition focus:border-sky-300/60 focus:bg-white/12 focus:ring-4 focus:ring-sky-400/10"
+                    type="email"
+                    name="email"
+                    placeholder="tu@empresa.com"
+                    required
+                  />
+                </label>
+
+                <label class="block">
+                  <span class="mb-2 block text-sm font-medium text-slate-200"
+                    >Tipo de proyecto</span
+                  >
+                  <input
+                    class="w-full rounded-2xl border border-white/14 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-slate-400 outline-none transition focus:border-sky-300/60 focus:bg-white/12 focus:ring-4 focus:ring-sky-400/10"
+                    type="text"
+                    name="project"
+                    placeholder="Landing, MVP, automatización..."
+                  />
+                </label>
+              </div>
+
               <label class="block">
-                <span class="mb-2 block text-sm font-medium text-slate-900">Email</span>
-                <input class="field" type="email" name="email" placeholder="tu@empresa.com" required />
+                <span class="mb-2 block text-sm font-medium text-slate-200"
+                  >Mensaje</span
+                >
+                <textarea
+                  class="min-h-36 w-full resize-y rounded-2xl border border-white/14 bg-white/10 px-4 py-3 text-sm leading-6 text-white placeholder:text-slate-400 outline-none transition focus:border-sky-300/60 focus:bg-white/12 focus:ring-4 focus:ring-sky-400/10"
+                  name="message"
+                  placeholder="Cuéntanos qué quieres construir, qué problema quieres resolver o qué proceso quieres mejorar."
+                  required></textarea>
               </label>
-              <label class="block">
-                <span class="mb-2 block text-sm font-medium text-slate-900">Tipo de proyecto</span>
-                <input class="field" type="text" name="project" placeholder="Landing, software, automatización, IA..." />
-              </label>
-            </div>
 
-            <label class="block">
-              <span class="mb-2 block text-sm font-medium text-slate-900">Mensaje</span>
-              <textarea class="field min-h-36 resize-y" name="message" placeholder="Cuéntanos el contexto, objetivo y alcance inicial." required></textarea>
-            </label>
+              <button type="submit" class="button-primary w-full">
+                Enviar consulta
+              </button>
 
-            <p class="text-sm leading-6 text-slate-500">
-              Este formulario está listo a nivel de interfaz. Cuando conectes un proveedor real, aquí podremos mostrar estados de envío, error y confirmación.
-            </p>
-
-            <button type="submit" class="button-primary w-full sm:w-auto">
-              Enviar consulta
-            </button>
-          </form>
+              <p class="text-xs leading-5 text-slate-400">
+                Responderemos con una primera orientación para definir alcance,
+                prioridades y próximos pasos.
+              </p>
+            </form>
+          </div>
         </div>
       </div>
     </div>
