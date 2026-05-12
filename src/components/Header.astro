@@ -9,9 +9,11 @@ const navItems = [
 ];
 ---
 
-<header class="fixed top-0 z-50">
+<header
+  class="site-header inset-x-0 top-0 w-full"
+>
   <div class="section-shell pt-4">
-    <div class="section-card-strong flex items-center justify-between rounded-[1.6rem] px-4 py-3 md:px-6">
+    <div class="site-header__bar section-card-strong flex items-center justify-between rounded-[1.6rem] px-4 py-3 md:px-6">
       <a href="#inicio" class="flex items-center gap-3" aria-label="MAlabs, ir al inicio">
         <img src="/brand/malabs-logo-wordmark.svg" alt="MAlabs" class="h-7 w-auto md:h-8" loading="eager" />
       </a>
@@ -49,7 +51,7 @@ const navItems = [
 
     <div
       id="mobile-menu"
-      class="section-card-strong mt-3 hidden rounded-[1.75rem] p-4 md:hidden"
+      class="site-header__menu section-card-strong mt-3 hidden rounded-[1.75rem] p-4 md:hidden"
       data-mobile-menu
     >
       <nav class="flex flex-col gap-2" aria-label="Navegación móvil">
