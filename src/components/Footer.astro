@@ -4,8 +4,13 @@ const footerLinks = [
   { href: "#servicios", label: "Servicios" },
   { href: "#proyectos", label: "Proyectos" },
   { href: "#oferta", label: "Oferta" },
-  { href: "#contacto", label: "Contacto" }
+  { href: "#contacto", label: "Contacto" },
+  { href: "/contacto", label: "Contacto directo" }
 ];
+
+const isHome = Astro.url.pathname === "/";
+const withHomePath = (href: string) =>
+  href.startsWith("#") && !isHome ? `/${href}` : href;
 ---
 
 <footer class="pb-8 pt-6">
@@ -23,7 +28,7 @@ const footerLinks = [
 
         <nav class="flex flex-wrap gap-4 text-sm text-slate-300 lg:justify-end" aria-label="Enlaces del pie de página">
           {footerLinks.map((item) => (
-            <a href={item.href} class="hover:text-white">
+            <a href={withHomePath(item.href)} class="hover:text-white">
               {item.label}
             </a>
           ))}
@@ -31,7 +36,7 @@ const footerLinks = [
       </div>
 
       <div class="mt-8 border-t border-white/10 pt-5 text-sm text-slate-400">
-        © 2026 MAlabs Group S.A.S. Todos los derechos reservados.
+        &copy; 2026 MAlabs Group S.A.S. Todos los derechos reservados.
       </div>
     </div>
   </div>

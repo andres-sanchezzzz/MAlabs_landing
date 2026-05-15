@@ -14,7 +14,7 @@
 
         <div class="mt-8 flex flex-col gap-4 sm:flex-row">
           <a
-            href="https://wa.me/?text=Hola%20MAlabs%2C%20quiero%20agendar%20una%20llamada."
+            href="https://wa.me/573053215641?text=Hola%20MAlabs%2C%20quiero%20agendar%20una%20llamada."
             class="button-primary"
             target="_blank"
             rel="noreferrer"
@@ -61,7 +61,7 @@
               id="formulario-contacto"
               class="mt-8 space-y-4"
               aria-label="Formulario de contacto"
-              data-static-form
+              data-whatsapp-form
             >
               <div class="grid gap-4 sm:grid-cols-2">
                 <label class="block">
@@ -128,14 +128,27 @@
                   required></textarea>
               </label>
 
-              <button type="submit" class="button-primary w-full">
+              <a
+                href="https://wa.me/573053215641"
+                class="button-primary flex w-full"
+                target="_blank"
+                rel="noreferrer"
+                data-whatsapp-submit
+              >
                 Enviar consulta
-              </button>
+              </a>
 
               <p class="text-xs leading-5 text-slate-400">
                 Responderemos con una primera orientación para definir alcance,
                 prioridades y próximos pasos.
               </p>
+
+              <a
+                href="/contacto"
+                class="inline-flex text-sm font-medium text-sky-100 hover:text-white"
+              >
+                Ver contactos directos
+              </a>
             </form>
           </div>
         </div>
@@ -145,9 +158,65 @@
 </section>
 
 <script is:inline>
-  document.querySelectorAll("[data-static-form]").forEach((form) => {
+  const whatsappBaseUrl = "https://wa.me/573053215641";
+
+  const buildWhatsappMessage = (form) => {
+    const formData = new FormData(form);
+    const getValue = (fieldName) => String(formData.get(fieldName) ?? "").trim();
+
+    const name = getValue("name");
+    const company = getValue("company");
+    const email = getValue("email");
+    const project = getValue("project");
+    const message = getValue("message");
+
+    const lines = [
+      "Hola MAlabs, quiero iniciar una consulta.",
+      "",
+      `Nombre: ${name || "No indicado"}`,
+      company ? `Empresa: ${company}` : null,
+      `Email: ${email || "No indicado"}`,
+      project ? `Tipo de proyecto: ${project}` : null,
+      "",
+      "Mensaje:",
+      message || "Sin mensaje"
+    ].filter(Boolean);
+
+    return `${whatsappBaseUrl}?text=${encodeURIComponent(lines.join("\n"))}`;
+  };
+
+  document.querySelectorAll("[data-whatsapp-form]").forEach((form) => {
+    const whatsappLink = form.querySelector("[data-whatsapp-submit]");
+
+    if (!(whatsappLink instanceof HTMLAnchorElement)) {
+      return;
+    }
+
+    const syncWhatsappLink = () => {
+      if (!form.reportValidity()) {
+        return null;
+      }
+
+      const whatsappUrl = buildWhatsappMessage(form);
+      whatsappLink.href = whatsappUrl;
+      return whatsappUrl;
+    };
+
+    whatsappLink.addEventListener("click", (event) => {
+      const whatsappUrl = syncWhatsappLink();
+
+      if (!whatsappUrl) {
+        event.preventDefault();
+      }
+    });
+
     form.addEventListener("submit", (event) => {
       event.preventDefault();
+
+      const whatsappUrl = syncWhatsappLink();
+      if (whatsappUrl) {
+        window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+      }
     });
   });
 </script>

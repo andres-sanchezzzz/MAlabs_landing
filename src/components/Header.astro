@@ -7,6 +7,10 @@ const navItems = [
   { href: "#oferta", label: "Oferta" },
   { href: "#contacto", label: "Contacto" }
 ];
+
+const isHome = Astro.url.pathname === "/";
+const withHomePath = (href: string) =>
+  href.startsWith("#") && !isHome ? `/${href}` : href;
 ---
 
 <header
@@ -14,20 +18,20 @@ const navItems = [
 >
   <div class="section-shell pt-4">
     <div class="site-header__bar section-card-strong flex items-center justify-between rounded-[1.6rem] px-4 py-3 md:px-6">
-      <a href="#inicio" class="flex items-center gap-3" aria-label="MAlabs, ir al inicio">
+      <a href={withHomePath("#inicio")} class="flex items-center gap-3" aria-label="MAlabs, ir al inicio">
         <img src="/brand/malabs-logo-wordmark.svg" alt="MAlabs" class="h-7 w-auto md:h-8" loading="eager" />
       </a>
 
       <nav class="hidden items-center gap-8 md:flex" aria-label="Navegación principal">
         {navItems.map((item) => (
-          <a href={item.href} class="nav-link">
+          <a href={withHomePath(item.href)} class="nav-link">
             {item.label}
           </a>
         ))}
       </nav>
 
       <div class="hidden md:block">
-        <a href="#contacto" class="button-primary">
+        <a href={withHomePath("#contacto")} class="button-primary">
           Agenda una llamada
         </a>
       </div>
@@ -56,11 +60,11 @@ const navItems = [
     >
       <nav class="flex flex-col gap-2" aria-label="Navegación móvil">
         {navItems.map((item) => (
-          <a href={item.href} class="rounded-2xl px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-100">
+          <a href={withHomePath(item.href)} class="rounded-2xl px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-100">
             {item.label}
           </a>
         ))}
-        <a href="#contacto" class="button-primary mt-2 w-full">
+        <a href={withHomePath("#contacto")} class="button-primary mt-2 w-full">
           Agenda una llamada
         </a>
       </nav>

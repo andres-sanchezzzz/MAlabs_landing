@@ -1,0 +1,97 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const contacts = [
+  {
+    name: "Andres Sanchez Castrillon",
+    email: "a.sanchez@malabsgroup.com",
+    phone: "3017012250"
+  },
+  {
+    name: "Manuela Valencia Toro",
+    email: "m.valencia@malabsgroup.com",
+    phone: "3053215641"
+  }
+];
+---
+
+<BaseLayout
+  title="Contacto | MAlabs Group S.A.S."
+  description="Contacta al equipo de MAlabs Group S.A.S. por correo, teléfono o WhatsApp."
+>
+  <Header />
+  <main class="pt-24 md:pt-28">
+    <section class="pt-6 pb-18 md:pt-8 md:pb-24">
+      <div class="section-shell">
+        <div class="eyebrow">Contacto directo</div>
+
+        <div class="mt-5 grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(320px,1fr)] lg:items-start">
+          <div class="reveal" data-reveal>
+            <h1 class="section-title">Hablemos de tu proyecto.</h1>
+            <p class="section-copy mt-5 max-w-2xl">
+              Si prefieres escribirnos directo, aquí tienes los datos del equipo
+              para coordinar una llamada o compartir el contexto de tu necesidad.
+            </p>
+
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a href="/#contacto" class="button-primary">
+                Ir al formulario
+              </a>
+              <a
+                href="https://wa.me/573053215641"
+                class="button-secondary"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Abrir WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <div class="grid gap-4">
+            {contacts.map((contact, index) => (
+              <article
+                class={`section-card rounded-[1.75rem] p-6 md:p-7 reveal ${index === 1 ? "stagger-1" : ""}`}
+                data-reveal
+              >
+                <p class="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">
+                  Contacto
+                </p>
+                <h2 class="mt-3 text-2xl font-semibold text-slate-950">
+                  {contact.name}
+                </h2>
+
+                <div class="mt-6 space-y-4 text-sm text-slate-600">
+                  <div>
+                    <p class="font-semibold text-slate-950">Email</p>
+                    <a
+                      href={`mailto:${contact.email}`}
+                      class="mt-1 inline-flex text-base text-sky-700 hover:text-sky-800"
+                    >
+                      {contact.email}
+                    </a>
+                  </div>
+
+                  <div>
+                    <p class="font-semibold text-slate-950">Teléfono</p>
+                    <a
+                      href={`https://wa.me/57${contact.phone}`}
+                      class="mt-1 inline-flex text-base text-sky-700 hover:text-sky-800"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {contact.phone}
+                    </a>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
